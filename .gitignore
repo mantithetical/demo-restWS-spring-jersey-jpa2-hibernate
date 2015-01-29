@@ -15,3 +15,6 @@
 /.idea
 /.idea/**
 /c:/**
+demo-rest-spring-jersey-jpa2-hibernate.iml
+rest-demo.*.log
+src/main/main.iml
