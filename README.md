@@ -8,8 +8,7 @@ Run the example
 - Download/clone the project
 - Run 'mvn jetty:run -Djetty.port=9090' from the project directory (assumes maven is installed locally)
 
-Endpoints
---
+Endpoints (Content-Type: application/json)
 
 - GET - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
 - PUT - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
