@@ -11,8 +11,8 @@ Run the example
 Endpoints
 --
 
-GET - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
-PUT - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
+- GET - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
+- PUT - http://localhost:9090/javers-hibernate-proxy-0.0.1-SNAPSHOT/podcasts
 
 Sample payload:
 ```
