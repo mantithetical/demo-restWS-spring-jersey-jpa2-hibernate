@@ -20,10 +20,10 @@ public class LoggingResponseFilter
 		String method = requestContext.getMethod();
 
 		logger.debug("Requesting " + method + " for path " + requestContext.getUriInfo().getPath());
-		Object entity = responseContext.getEntity();
-		if (entity != null) {
-			logger.debug("Response " + new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(entity));
-		}
+//		Object entity = responseContext.getEntity();
+//		if (entity != null) {
+//			logger.debug("Response " + new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(entity));
+//		}
 		
 	}
 

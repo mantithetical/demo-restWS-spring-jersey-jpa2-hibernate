@@ -12,3 +12,6 @@
 /target
 
 /.git
+/.idea
+/.idea/**
+/c:/**

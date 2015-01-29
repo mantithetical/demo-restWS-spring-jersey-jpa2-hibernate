@@ -2,14 +2,18 @@ package org.codingpedia.demo.rest.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codingpedia.demo.rest.service.helper.CustomJsonDateDeserializer;
@@ -25,7 +29,7 @@ import org.codingpedia.demo.rest.service.helper.CustomJsonDateSerializer;
 @XmlRootElement
 @Entity
 @Table(name="podcasts")
-public class Podcast implements Serializable {
+public class 	Podcast implements Serializable {
 
 	private static final long serialVersionUID = -8039686696076337053L;
 
@@ -56,6 +60,13 @@ public class Podcast implements Serializable {
 	@JsonSerialize(using = CustomJsonDateSerializer.class)
 	@JsonDeserialize(using = CustomJsonDateDeserializer.class)	
 	private Date insertionDate;
+
+	@OneToMany(mappedBy = "podcast", fetch = FetchType.LAZY)
+	private List<SoundEffect> soundEffectList;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "edition_id")
+	private Edition edition;
 
 	public Podcast(){}
 	
@@ -116,5 +127,21 @@ public class Podcast implements Serializable {
 	public void setInsertionDate(Date insertionDate) {
 		this.insertionDate = insertionDate;
 	}
-		
+
+	public List<SoundEffect> getSoundEffectList() {
+		return soundEffectList;
+	}
+
+	public void setSoundEffectList(List<SoundEffect> soundEffectList) {
+		this.soundEffectList = soundEffectList;
+	}
+
+//    @JsonIgnore
+    public Edition getEdition() {
+		return edition;
+	}
+
+	public void setEdition(Edition edition) {
+		this.edition = edition;
+	}
 }
