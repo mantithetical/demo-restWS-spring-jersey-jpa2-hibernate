@@ -1,26 +1,5 @@
 package org.codingpedia.demo.rest.dao.impl;
 
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.TimeZone;
-
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.TemporalType;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.SerializerProvider;
 import com.google.gson.*;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
@@ -35,6 +14,12 @@ import org.javers.core.json.JsonTypeAdapterTemplate;
 import org.javers.core.metamodel.type.TypeMapper;
 import org.javers.repository.mongo.MongoRepository;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.*;
 
 public class PodcastDaoJPA2Impl implements PodcastDao {
 
@@ -145,7 +130,7 @@ public class PodcastDaoJPA2Impl implements PodcastDao {
         }
     }
 
-	private static class HibernateProxySerializer extends JsonTypeAdapterTemplate<HibernateProxy> {
+	public static class HibernateProxySerializer extends JsonTypeAdapterTemplate<HibernateProxy> {
 		@Inject
 		private TypeMapper typeMapper;
 
