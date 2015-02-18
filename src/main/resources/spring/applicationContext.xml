@@ -20,7 +20,6 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>    
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="persistenceXmlLocation" value="classpath:config/persistence-demo.xml" />
         <property name="persistenceUnitName" value="demoRestPersistence" />        
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="org.codingpedia.demo.*" />

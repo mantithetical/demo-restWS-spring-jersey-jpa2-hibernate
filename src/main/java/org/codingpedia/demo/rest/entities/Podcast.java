@@ -29,7 +29,12 @@ import org.codingpedia.demo.rest.service.helper.CustomJsonDateSerializer;
 @XmlRootElement
 @Entity
 @Table(name="podcasts")
-public class 	Podcast implements Serializable {
+public class Podcast implements Serializable {
+    
+    @Override
+    public String toString() {
+        return id != null ? id.toString() :"null";
+    }
 
 	private static final long serialVersionUID = -8039686696076337053L;
 

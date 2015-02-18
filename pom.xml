@@ -153,6 +153,20 @@
 			<artifactId>javers-persistence-mongo</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+        <!-- Test -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>

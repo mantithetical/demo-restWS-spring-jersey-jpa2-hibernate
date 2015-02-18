@@ -79,6 +79,7 @@ public class PodcastDaoJPA2Impl implements PodcastDao {
 		return 1L;
 	}
 
+    @Transactional
 	public Long createPodcast(Podcast podcast) {
 		
 		podcast.setInsertionDate(new Date());
